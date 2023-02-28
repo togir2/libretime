@@ -143,9 +143,7 @@ class LiquidsoapClient:
             if input_fade_transition is not None:
                 self._set_var("input_fade_transition", input_fade_transition)
             if default_crossfade_duration is not None:
-                self._set_var(
-                    "default_crossfade_transition", default_crossfade_duration
-                )
+                self._set_var("default_crossfade_duration", default_crossfade_duration)
             if default_fade_in is not None:
                 self._set_var("default_fade_in", default_fade_in)
             if default_fade_out is not None:
