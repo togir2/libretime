@@ -17,6 +17,9 @@ class StreamPreferencesView(views.APIView):
             data.dict(
                 include={
                     "input_fade_transition",
+                    "default_crossfade_duration",
+                    "default_fade_in",
+                    "default_fade_out",
                     "message_format",
                     "message_offline",
                 }

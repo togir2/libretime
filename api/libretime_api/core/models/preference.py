@@ -16,6 +16,9 @@ class MessageFormatKind(int, Enum):
 
 class StreamPreferences(BaseModel):
     input_fade_transition: float
+    default_crossfade_duration: float
+    default_fade_in: float
+    default_fade_out: float
     message_format: MessageFormatKind
     message_offline: str
     # input_auto_switch_off: bool
@@ -78,6 +81,11 @@ class Preference(models.Model):
         entries = dict(cls.site.values_list("key", "value"))
         return StreamPreferences(
             input_fade_transition=float(entries.get("default_transition_fade") or 0.0),
+            default_crossfade_duration=float(
+                entries.get("default_crossfade_duration") or 0.0
+            ),
+            default_fade_in=float(entries.get("default_fade_in") or 0.0),
+            default_fade_out=float(entries.get("default_fade_out") or 0.0),
             message_format=int(entries.get("stream_label_format") or 0),
             message_offline=entries.get("off_air_meta") or "Offline",
         )

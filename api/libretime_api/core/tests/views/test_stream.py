@@ -7,6 +7,9 @@ def test_stream_preferences_get(db, api_client: APIClient):
     assert response.status_code == 200
     assert response.json() == {
         "input_fade_transition": 0.0,
+        "default_crossfade_duration": 0.0,
+        "default_fade_in": 0.0,
+        "default_fade_out": 0.0,
         "message_format": 0,
         "message_offline": "LibreTime - offline",
     }

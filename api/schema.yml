@@ -7492,6 +7492,18 @@ components:
           type: number
           format: double
           readOnly: true
+        default_crossfade_duration:
+          type: number
+          format: double
+          readOnly: true
+        default_fade_in:
+          type: number
+          format: double
+          readOnly: true
+        default_fade_out:
+          type: number
+          format: double
+          readOnly: true
         message_format:
           type: integer
           readOnly: true
@@ -7499,6 +7511,9 @@ components:
           type: string
           readOnly: true
       required:
+        - default_crossfade_duration
+        - default_fade_in
+        - default_fade_out
         - input_fade_transition
         - message_format
         - message_offline

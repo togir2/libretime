@@ -4,6 +4,9 @@ from rest_framework import serializers
 # pylint: disable=abstract-method
 class StreamPreferencesSerializer(serializers.Serializer):
     input_fade_transition = serializers.FloatField(read_only=True)
+    default_crossfade_duration = serializers.FloatField(read_only=True)
+    default_fade_in = serializers.FloatField(read_only=True)
+    default_fade_out = serializers.FloatField(read_only=True)
     message_format = serializers.IntegerField(read_only=True)
     message_offline = serializers.CharField(read_only=True)
 

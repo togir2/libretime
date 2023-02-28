@@ -14,6 +14,9 @@ def test_preference_get_stream_preferences(db):
     result = Preference.get_stream_preferences()
     assert result.dict() == {
         "input_fade_transition": 0.0,
+        "default_crossfade_duration": 0.0,
+        "default_fade_in": 0.0,
+        "default_fade_out": 0.0,
         "message_format": 0,
         "message_offline": "LibreTime - offline",
     }
