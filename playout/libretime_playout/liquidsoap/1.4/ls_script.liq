@@ -25,7 +25,7 @@ l = on_metadata(notify_queue, l)
 
 server.register(namespace="queues",
             "s1_skip",
-            fun (s) -> begin log("queues.s#{this_source_id}_skip")
+            fun (s) -> begin log("queues.s1_skip")
                 source.skip(l)
                 "Done"
             end)
