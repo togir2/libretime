@@ -66,7 +66,7 @@ end
 # the trasition fade to have effect on the first song that would be played switching out
 # of the default(silent) source
 def transition_default(a,b) =
-  log("transition called...")
+  log("transition_default called...")
   if !just_switched then
       just_switched := false
       add(
@@ -81,6 +81,7 @@ def transition_default(a,b) =
       )
   else
     just_switched := false
+    log("transition used")
     b
   end
 end

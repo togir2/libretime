@@ -10,7 +10,7 @@ dynamic_metadata_callback = ref fun (~new_track=false, s) -> begin () end
 just_switched = ref false
 
 def crossfade_log(id, l)
-    print("Crossfade #{id}"")
+    print("Crossfade #{id}")
     crossfade(duration=default_crossfade_duration(), fade_in=default_fade_in(), fade_out=default_fade_out(), smart=false, l)
 end
 
@@ -31,7 +31,7 @@ def create_source()
 
     # The crossfade function controls fade in/out of Tracks and shows
     # Default values are set in the entrypoint.liq / entrypoint.liq.j2 template
-    crossfade_log("in create_source #{this_source_id}")
+    l = crossfade_log("in create_source #{this_source_id}", l)
 
     l = on_metadata(notify_queue, l)
 
