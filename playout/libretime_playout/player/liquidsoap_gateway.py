@@ -68,7 +68,8 @@ class TelnetLiquidsoap:
     def queue_push(self, queue_id, media_item):
         try:
             annotation = create_liquidsoap_annotation(media_item)
-            logger.warning(f"Sending to queue: {queue_id}")
+            logger.warning("Sending to queue:")
+            logger.warning(queue_id)
             logger.warning(annotation)
             self.liq_client.queue_push(queue_id, annotation, media_item["show_name"])
         except (ConnectionError, TimeoutError) as exception:
