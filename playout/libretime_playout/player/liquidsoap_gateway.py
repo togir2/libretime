@@ -13,8 +13,8 @@ def create_liquidsoap_annotation(file_event: FileEvent) -> str:
     annotations = {
         "media_id": file_event["id"],
         "liq_start_next": "0",
-        "liq_fade_in": float(file_event["fade_in"]), # / 1000,
-        "liq_fade_out": float(file_event["fade_out"]), # / 1000,
+        "liq_fade_in": float(file_event["fade_in"]), / 1000,
+        "liq_fade_out": float(file_event["fade_out"]), / 1000,
         "liq_cue_in": float(file_event["cue_in"]),
         "liq_cue_out": float(file_event["cue_out"]),
         "schedule_table_id": file_event["row_id"],
@@ -68,6 +68,7 @@ class TelnetLiquidsoap:
     def queue_push(self, queue_id, media_item):
         try:
             annotation = create_liquidsoap_annotation(media_item)
+            logger.warning(f"Sending to queue: {queue_id}")
             logger.warning(annotation)
             self.liq_client.queue_push(queue_id, annotation, media_item["show_name"])
         except (ConnectionError, TimeoutError) as exception:

@@ -26,7 +26,7 @@ def create_source()
 
     # The crossfade function controls fade in/out of Tracks and shows
     # Default values are set in the entrypoint.liq / entrypoint.liq.j2 template
-    l = crossfade(duration=default_crossfade_duration(), smart=true, l)
+    l = crossfade(duration=default_crossfade_duration(), smart=false, l)
 
     l = on_metadata(notify_queue, l)
 
