@@ -138,6 +138,9 @@ class PypoFetch(Thread):
                 message_format=preferences.message_format,
                 message_offline=preferences.message_offline,
                 input_fade_transition=preferences.input_fade_transition,
+                default_crossfade_duration=preferences.default_crossfade_duration,
+                default_fade_in=preferences.default_fade_in,
+                default_fade_out=preferences.default_fade_out,
             )
 
             self.pypo_liquidsoap.liq_client.source_switch_status(

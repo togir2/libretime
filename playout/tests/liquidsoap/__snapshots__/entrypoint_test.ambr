@@ -27,6 +27,9 @@
   message_offline = interactive.string("message_offline", "LibreTime - offline")
   message_format = interactive.string("message_format", "0")
   input_fade_transition = interactive.float("input_fade_transition", 0.0)
+  default_crossfade_duration = interactive.float("default_crossfade_duration", 0.0)
+  default_fade_in = interactive.float("default_fade_in", 0.0)
+  default_fade_out = interactive.float("default_fade_out", 0.0)
   
   %include "/fake/1.4/ls_script.liq"
   
@@ -64,6 +67,9 @@
   message_offline = interactive.string("message_offline", "LibreTime - offline")
   message_format = interactive.string("message_format", "0")
   input_fade_transition = interactive.float("input_fade_transition", 0.0)
+  default_crossfade_duration = interactive.float("default_crossfade_duration", 0.0)
+  default_fade_in = interactive.float("default_fade_in", 0.0)
+  default_fade_out = interactive.float("default_fade_out", 0.0)
   
   %include "/fake/1.4/ls_script.liq"
   
@@ -126,6 +132,9 @@
   message_offline = interactive.string("message_offline", "LibreTime - offline")
   message_format = interactive.string("message_format", "0")
   input_fade_transition = interactive.float("input_fade_transition", 0.0)
+  default_crossfade_duration = interactive.float("default_crossfade_duration", 0.0)
+  default_fade_in = interactive.float("default_fade_in", 0.0)
+  default_fade_out = interactive.float("default_fade_out", 0.0)
   
   %include "/fake/1.4/ls_script.liq"
   
@@ -184,6 +193,9 @@
   message_offline = interactive.string("message_offline", "LibreTime - offline")
   message_format = interactive.string("message_format", "0")
   input_fade_transition = interactive.float("input_fade_transition", 0.0)
+  default_crossfade_duration = interactive.float("default_crossfade_duration", 0.0)
+  default_fade_in = interactive.float("default_fade_in", 0.0)
+  default_fade_out = interactive.float("default_fade_out", 0.0)
   
   %include "/fake/1.4/ls_script.liq"
   
@@ -267,6 +279,9 @@
   message_offline = interactive.string("message_offline", "LibreTime - offline")
   message_format = interactive.string("message_format", "0")
   input_fade_transition = interactive.float("input_fade_transition", 0.0)
+  default_crossfade_duration = interactive.float("default_crossfade_duration", 0.0)
+  default_fade_in = interactive.float("default_fade_in", 0.0)
+  default_fade_out = interactive.float("default_fade_out", 0.0)
   
   %include "/fake/1.4/ls_script.liq"
   
@@ -312,6 +327,9 @@
   message_offline = interactive.string("message_offline", "LibreTime - offline")
   message_format = interactive.string("message_format", "0")
   input_fade_transition = interactive.float("input_fade_transition", 0.0)
+  default_crossfade_duration = interactive.float("default_crossfade_duration", 0.0)
+  default_fade_in = interactive.float("default_fade_in", 0.0)
+  default_fade_out = interactive.float("default_fade_out", 0.0)
   
   %include "/fake/1.4/ls_script.liq"
   

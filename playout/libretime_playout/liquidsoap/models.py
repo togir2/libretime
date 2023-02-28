@@ -15,6 +15,9 @@ class MessageFormatKind(int, Enum):
 
 class StreamPreferences(BaseModel):
     input_fade_transition: float
+    default_crossfade_duration: float
+    default_fade_in: float
+    default_fade_out: float
     message_format: MessageFormatKind
     message_offline: str
 

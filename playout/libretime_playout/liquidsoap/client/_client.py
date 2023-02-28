@@ -129,6 +129,9 @@ class LiquidsoapClient:
         message_format: Optional[MessageFormatKind] = None,
         message_offline: Optional[str] = None,
         input_fade_transition: Optional[float] = None,
+        default_crossfade_duration: Optional[float] = None,
+        default_fade_in: Optional[float] = None,
+        default_fade_out: Optional[float] = None,
     ):
         with self.conn:
             if station_name is not None:
@@ -139,3 +142,11 @@ class LiquidsoapClient:
                 self._set_var("message_offline", self._quote(message_offline))
             if input_fade_transition is not None:
                 self._set_var("input_fade_transition", input_fade_transition)
+            if default_crossfade_duration is not None:
+                self._set_var(
+                    "default_crossfade_transition", default_crossfade_duration
+                )
+            if default_fade_in is not None:
+                self._set_var("default_fade_in", default_fade_in)
+            if default_fade_out is not None:
+                self._set_var("default_fade_out", default_fade_out)

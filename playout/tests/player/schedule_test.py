@@ -389,6 +389,9 @@ def test_get_schedule(schedule, requests_mock, api_client: ApiClient):
         f"{base_url}/api/v2/stream/preferences",
         json={
             "input_fade_transition": 2.0,
+            "default_crossfade_duration": 0.0,
+            "default_fade_in": 0.0,
+            "default_fade_out": 0.0,
             "message_format": 0,
             "message_offline": "",
         },

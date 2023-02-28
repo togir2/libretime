@@ -34,6 +34,9 @@ def test_generate_entrypoint(tmp_path: Path, stream_config: Config, version, sna
             config=stream_config,
             preferences=StreamPreferences(
                 input_fade_transition=0.0,
+                default_crossfade_duration=0.0,
+                default_fade_in=0.0,
+                default_fade_out=0.0,
                 message_format=0,
                 message_offline="LibreTime - offline",
             ),
@@ -65,6 +68,9 @@ def test_liquidsoap_syntax(tmp_path: Path, stream_config):
         config=stream_config,
         preferences=StreamPreferences(
             input_fade_transition=0.0,
+            default_crossfade_duration=0.0,
+            default_fade_in=0.0,
+            default_fade_out=0.0,
             message_format=0,
             message_offline="LibreTime - offline",
         ),

@@ -23,8 +23,9 @@ def create_source()
     l = cue_cut(l)
     l = amplify(1., override="replay_gain", l)
 
-    # the crossfade function controls fade in/out
-    l = crossfade(duration=0., smart=true, l)
+    # The crossfade function controls fade in/out of Tracks and shows
+    # Default values are set in the entrypoint.liq / entrypoint.liq.j2 template
+    l = crossfade(duration=default_crossfade_duration(), fade_in=default_fade_in(), fade_out=default_fade_out(), smart=false, l)
 
     l = on_metadata(notify_queue, l)
 

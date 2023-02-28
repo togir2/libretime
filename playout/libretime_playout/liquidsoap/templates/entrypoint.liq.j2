@@ -28,6 +28,9 @@ station_name = interactive.string("station_name", {{ info.station_name | quote }
 message_offline = interactive.string("message_offline", {{ preferences.message_offline | quote }})
 message_format = interactive.string("message_format", {{ preferences.message_format.value | quote }})
 input_fade_transition = interactive.float("input_fade_transition", {{ preferences.input_fade_transition }})
+default_crossfade_duration = interactive.float("default_crossfade_duration", {{ preferences.default_crossfade_duration }})
+default_fade_in = interactive.float("default_fade_in", {{ preferences.default_fade_in }})
+default_fade_out = interactive.float("default_fade_out", {{ preferences.default_fade_out }})
 
 %include "{{ paths.lib_filepath }}"
 
