@@ -24,7 +24,7 @@ def create_source()
     l = amplify(1., override="replay_gain", l)
 
     # the crossfade function controls fade in/out
-    l = crossfade(duration=0., smart=true, l)
+    l = crossfade(duration=0., smart=false, l)
 
     l = on_metadata(notify_queue, l)
 
