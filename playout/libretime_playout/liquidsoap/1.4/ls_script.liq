@@ -11,26 +11,40 @@ just_switched = ref false
 
 %include "ls_lib.liq"
 
-# Que for all our tracks
-l = request.equeue(id="1", length=0.5)
+sources = ref []
+source_id = ref 0
 
-l = audio_to_stereo(id="queue_src", l)
-l = cue_cut(l)
-l = amplify(1., override="replay_gain", l)
+def create_source()
+    this_source_id = !source_id
 
-# the crossfade function controls fade in/out
-l = crossfade(duration=0., smart=false, l)
+    l = request.equeue(id="s#{this_source_id}", length=0.5)
 
-l = on_metadata(notify_queue, l)
+    l = audio_to_stereo(id="queue_src", l)
+    l = cue_cut(l)
+    l = amplify(1., override="replay_gain", l)
 
-server.register(namespace="queues",
-            "s1_skip",
-            fun (s) -> begin log("queues.s#{this_source_id}_skip")
-                source.skip(l)
-                "Done"
-            end)
+    # the crossfade function controls fade in/out
+    l = crossfade(duration=0., smart=false, l)
 
-pair = insert_metadata(l)
+    l = on_metadata(notify_queue, l)
+
+    sources := list.append([l], !sources)
+    server.register(namespace="queues",
+                "s#{this_source_id}_skip",
+                fun (s) -> begin log("queues.s#{this_source_id}_skip")
+                    clear_queue(l)
+                    "Done"
+                end)
+    source_id := !source_id + 1
+end
+
+create_source()
+create_source()
+create_source()
+create_source()
+
+queue = add(!sources, normalize=false)
+pair = insert_metadata(queue)
 dynamic_metadata_callback := fst(pair)
 queue = snd(pair)
 
