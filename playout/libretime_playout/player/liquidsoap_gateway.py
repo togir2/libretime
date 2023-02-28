@@ -60,7 +60,7 @@ class TelnetLiquidsoap:
     @ls_timeout
     def queue_remove(self, queue_id):
         try:
-            self.liq_client.queues_remove(queue_id)
+            self.liq_client.queues_remove(1)
         except (ConnectionError, TimeoutError) as exception:
             logger.exception(exception)
 
@@ -71,7 +71,7 @@ class TelnetLiquidsoap:
             logger.error(f"Pushed to que:")
             logger.error(queue_id)
             logger.error(annotation)
-            self.liq_client.queue_push(queue_id, annotation, media_item["show_name"])
+            self.liq_client.queue_push(1, annotation, media_item["show_name"])
         except (ConnectionError, TimeoutError) as exception:
             logger.exception(exception)
 

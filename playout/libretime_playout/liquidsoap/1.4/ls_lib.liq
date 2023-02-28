@@ -110,10 +110,6 @@ def make_ouput_on_error_handler(stream)
   on_error
 end
 
-def clear_queue(s)
-    source.skip(s)
-end
-
 # NOTE
 # A few values are hardcoded and may be dependent:
 #  - the delay in gracetime is linked with the buffer duration of input.http
