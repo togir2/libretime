@@ -68,7 +68,7 @@ class TelnetLiquidsoap:
     def queue_push(self, queue_id, media_item):
         try:
             annotation = create_liquidsoap_annotation(media_item)
-            log.info(annotation)
+            logger.info(annotation)
             self.liq_client.queue_push(queue_id, annotation, media_item["show_name"])
         except (ConnectionError, TimeoutError) as exception:
             logger.exception(exception)
