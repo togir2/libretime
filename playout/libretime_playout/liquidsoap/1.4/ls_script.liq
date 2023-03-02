@@ -23,8 +23,9 @@ def create_source()
     l = cue_cut(l)
     l = amplify(1., override="replay_gain", l)
 
-    # the crossfade function controls fade in/out
-    l = crossfade(duration=0., smart=true, l)
+    # Fade the tracks to avoid hard cuts in between and at the end of the shows
+    l = fade.in(l)
+    l = fade.out(l)
 
     l = on_metadata(notify_queue, l)
 
