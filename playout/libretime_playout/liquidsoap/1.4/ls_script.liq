@@ -45,7 +45,7 @@ create_source()
 create_source()
 
 queue = add(!sources, normalize=false)
-crossfade(duration=6.0, fade_in=0., fade_out=0., queue)
+queue = crossfade(duration=6.0, fade_in=0., fade_out=0., queue)
 pair = insert_metadata(queue)
 dynamic_metadata_callback := fst(pair)
 queue = snd(pair)
