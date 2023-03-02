@@ -121,6 +121,8 @@ def generate_file_events(
     """
     schedule_start_event_key = datetime_to_event_key(schedule["starts_at"])
     schedule_end_event_key = datetime_to_event_key(schedule["ends_at"])
+    logger.info("SCHEDULE_FADE_IN")
+    logger.info(schedule["fade_in"])
 
     event: FileEvent = {
         "type": EventKind.FILE,
