@@ -74,7 +74,7 @@ class AbstractApiClient:
         try:
             response = self.session.request(method, url, **kwargs)
             logger.info(url)
-            logger.info(**kwargs)
+            logger.info(kwargs)
             response.raise_for_status()
             return response
 
