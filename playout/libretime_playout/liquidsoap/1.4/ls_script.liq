@@ -24,8 +24,8 @@ def create_source()
     l = amplify(1., override="replay_gain", l)
 
     # Fade the tracks to avoid hard cuts
-    l = fade_in(l)
-    l = fade_out(l)
+    l = fade.in(l)
+    l = fade.out(l)
 
     l = on_metadata(notify_queue, l)
 
